@@ -1,3 +1,18 @@
+# todo app
+Using react, going to create a simple todo list app.
+Starting requirements will be simple and I'll be build up from there.
+1. Create a todo item with a:
+  a. title
+  b. description
+  c. timestamp
+  d. priority
+2. edit a todo item
+3. delete a todo item
+4. list all todo items
+
+
+
+--------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
