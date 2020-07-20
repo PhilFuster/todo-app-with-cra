@@ -36,3 +36,83 @@
     transform: rotate(360deg);
   }
 }
+
+.todo-list {
+  display: grid;
+  grid-template-columns: 60%;
+  place-items: center stretch;
+  place-content: center;
+}
+
+.todo-item {
+  border: 1px solid #282c34;
+  display: grid;
+  grid-template-rows: 20fr min-content 20fr;
+}
+
+.todo-item h1 {
+  margin: 10px 0;
+}
+
+.todo-item > * {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.todo-item > .actions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  width: min-content;
+  place-items: end;
+  place-self: end;
+}
+
+.todo-item-footer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: end;
+}
+
+.todo-item-footer small {
+  text-align: center;
+  align-self: center;
+}
+.actions > * {
+  width: 1.5em;
+  height: 1.5em;
+  padding: 10px;
+}
+.actions > *:hover {
+  cursor: pointer;
+}
+
+.todo-item-form {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.todo-item-form > label {
+  display: block;
+}
+
+.todo-item-form > textarea {
+  min-width: 400px;
+  min-height: 300px;
+  resize: none;
+}
+
+.todo-item-form > button {
+  margin-top: 20px;
+  display: block;
+}
+
+.pen-icon,
+.trashcan {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.pen-icon:hover {
+  background: linear-gradient(to bottom right, red, yellow);
+}

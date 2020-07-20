@@ -1,0 +1,30 @@
+[
+  {
+    "title": "The greatest todo of all time",
+    "description": "Make sure to do the greatest thing every.",
+    "creationDate": "1595220867",
+    "priority": "1",
+    "id": 1
+  },
+  {
+    "title": "Get groceries",
+    "description": "Milk, Eggs, Bread, Apples, Steak, Chicken, Pasta",
+    "creationDate": "1595220767",
+    "priority": "4",
+    "id": 2
+  },
+  {
+    "title": "Do Basketball Training Workout",
+    "description": "Run 3 miles, 300 pushups, 300 situps, 100 pullups, 100 dunks",
+    "creationDate": "1595219867",
+    "priority": "1",
+    "id": 3
+  },
+  {
+    "title": "Cook Dinner",
+    "description": "Make chicken soup.",
+    "creationDate": "1595219367",
+    "priority": "3",
+    "id": 4
+  }
+]

@@ -1,25 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TodoList from './components/TodoList';
+import TodoItemForm from './components/TodoItemForm';
+import { useEditMode } from './hooks/editMode-hooks';
 
+/**
+ * isEditMode: if in edit mode, TodoList is hidden, and TodoItem form is visible.
+ * When the user submits, edit mode is turned off and TodoList is visible again.
+ */
 function App() {
+  const { isEditMode, idToEdit } = useEditMode();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {(!isEditMode && <TodoList></TodoList>) || ''}
+      {(isEditMode && <TodoItemForm id={idToEdit}></TodoItemForm>) || ''}
+    </>
   );
 }
 
