@@ -116,3 +116,14 @@
 .pen-icon:hover {
   background: linear-gradient(to bottom right, red, yellow);
 }
+
+.priority-rating {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: min-content;
+  grid-auto-columns: min-content;
+}
+
+.priority-rating > small {
+  width: max-content;
+}

@@ -15,5 +15,6 @@ export const useInput = (initialValue) => {
   return [
     { value, onChange: (e) => setValue(e.target.value) },
     () => setValue(initialValue),
+    (priority) => setValue(priority),
   ];
 };

@@ -12,8 +12,13 @@ export default function TodoList() {
         {todoItems.map((n, i) => (
           <TodoItem key={i} {...n}></TodoItem>
         ))}
+        <button
+          style={{ justifySelf: 'start' }}
+          onClick={() => toggleEditMode()}
+        >
+          ADD
+        </button>
       </div>
-      <button onClick={() => toggleEditMode()}>ADD</button>
     </>
   );
 }

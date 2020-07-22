@@ -11,23 +11,22 @@ export function TodoItemProvider({ children }) {
 
   // Rather than allowing user to directly access setColors (and potentially make breaking changes)
   // giving them access to context through only allowed operations.
-  const addTodoItem = (title, description) => {
+  const addTodoItem = (title, description, priority) => {
     const creationDate = moment().unix();
-
     setTodoItems([
       ...todoItems,
-      { id: v4(), priority: 0, title, description, creationDate },
+      { id: v4(), priority, title, description, creationDate },
     ]);
   };
 
   /**
    * Update the passed in todoItem with the data in it.
-   * @param {todoItem object} todoItem - todoItem being updated.
+   * @param {TodoItem object} todoItem - TodoItem being updated.
    */
-  const updateTodoItem = (id, title, description) => {
+  const updateTodoItem = (id, title, description, priority) => {
     setTodoItems(
       todoItems.map((item, i) =>
-        item.id === id ? { ...item, title, description } : item
+        item.id === id ? { ...item, title, description, priority } : item
       )
     );
   };

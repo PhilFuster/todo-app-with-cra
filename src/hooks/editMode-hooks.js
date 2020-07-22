@@ -9,7 +9,6 @@ export function EditModeProvider({ children }) {
   const [idToEdit, setIdToEdit] = useState('');
 
   const toggleEditMode = (id = ``) => {
-    console.log('wtf');
     setIsEditMode(!isEditMode);
     setIdToEdit(id);
   };

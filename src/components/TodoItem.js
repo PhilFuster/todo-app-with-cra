@@ -3,6 +3,7 @@ import moment from 'moment';
 import { FaPen, FaTrash } from 'react-icons/fa';
 import { useEditMode } from './../hooks/editMode-hooks';
 import { useTodoItem, useTodoItems } from './../hooks/todoItem-hooks';
+import PriorityRating from './../components/PriorityRating';
 export default function TodoItem({
   title,
   description,
@@ -11,14 +12,14 @@ export default function TodoItem({
   id,
 }) {
   const { toggleEditMode } = useEditMode();
-  const { removeTodoItem } = useTodoItems();
+  const { removeTodoItem, prioritizeTodoItem } = useTodoItems();
   const formattedDate = moment.unix(creationDate, 'MMM DD, YYYY');
   return (
     <section id={id} className='todo-item'>
       <h1>{title}</h1>
       <p>{description}</p>
       <div className='todo-item-footer'>
-        <small>{formattedDate.format('MMM DD, YYYY - hh:mm')}</small>
+        <small>Created: {formattedDate.format('MMM DD, YYYY - hh:mm')}</small>
         <div className='actions'>
           <FaPen
             onClick={() => toggleEditMode(id)}
@@ -28,6 +29,10 @@ export default function TodoItem({
             onClick={() => removeTodoItem(id)}
             className='trashcan'
           ></FaTrash>
+          <PriorityRating
+            priority={priority}
+            onSelect={() => prioritizeTodoItem(id, priority)}
+          ></PriorityRating>
         </div>
       </div>
     </section>
